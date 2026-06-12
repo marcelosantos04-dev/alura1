@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monalisa Interativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Monalisa Interativa</h1>
+        <svg viewBox="0 0 400 500" class="monalisa-svg">
+            <!-- Fundo com gradiente da paisagem -->
+            <defs>
+                <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="skinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#F4A460;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#D2691E;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+
+            <!-- Céu -->
+            <rect width="400" height="250" fill="url(#skyGradient)"/>
+
+            <!-- Paisagem ao fundo -->
+            <ellipse cx="200" cy="280" rx="180" ry="80" fill="#8B7355"/>
+            
+            <!-- Corpo -->
+            <ellipse cx="200" cy="350" rx="70" ry="90" fill="#8B4513"/>
+            
+            <!-- Pescoço -->
+            <rect x="175" y="280" width="50" height="40" fill="url(#skinGradient)"/>
+            
+            <!-- Cabeça -->
+            <circle cx="200" cy="220" r="60" fill="url(#skinGradient)"/>
+            
+            <!-- Cabelo -->
+            <path d="M 140 190 Q 140 150 200 140 Q 260 150 260 190" fill="#3D2817"/>
+            <path d="M 140 190 Q 135 220 145 250 Q 155 260 170 255" fill="#3D2817"/>
+            <path d="M 260 190 Q 265 220 255 250 Q 245 260 230 255" fill="#3D2817"/>
+            
+            <!-- Rosto -->
+            <ellipse cx="200" cy="220" rx="55" ry="58" fill="url(#skinGradient)"/>
+            
+            <!-- Orelhas -->
+            <ellipse cx="142" cy="215" rx="15" ry="25" fill="url(#skinGradient)"/>
+            <ellipse cx="258" cy="215" rx="15" ry="25" fill="url(#skinGradient)"/>
+            
+            <!-- Olho esquerdo (vai seguir o cursor) -->
+            <g class="eye left-eye">
+                <ellipse cx="175" cy="200" rx="12" ry="16" fill="#FFFFFF"/>
+                <circle class="pupil left-pupil" cx="175" cy="200" r="8" fill="#2F1B0C"/>
+                <circle cx="177" cy="198" r="3" fill="#FFFFFF"/>
+            </g>
+            
+            <!-- Olho direito (vai seguir o cursor) -->
+            <g class="eye right-eye">
+                <ellipse cx="225" cy="200" rx="12" ry="16" fill="#FFFFFF"/>
+                <circle class="pupil right-pupil" cx="225" cy="200" r="8" fill="#2F1B0C"/>
+                <circle cx="227" cy="198" r="3" fill="#FFFFFF"/>
+            </g>
+            
+            <!-- Sobrancelhas -->
+            <path d="M 160 180 Q 175 170 190 175" stroke="#3D2817" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M 210 175 Q 225 170 240 180" stroke="#3D2817" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            
+            <!-- Nariz -->
+            <path d="M 200 195 L 200 235 M 195 235 Q 200 238 205 235" stroke="#8B6F47" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            
+            <!-- Boca (sorriso misterioso) -->
+            <path d="M 180 250 Q 200 260 220 250" stroke="#A0522D" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M 180 250 Q 200 255 220 250" fill="#CD853F" opacity="0.3"/>
+            
+            <!-- Mãos -->
+            <ellipse cx="130" cy="340" rx="20" ry="30" fill="url(#skinGradient)" transform="rotate(-30 130 340)"/>
+            <ellipse cx="270" cy="340" rx="20" ry="30" fill="url(#skinGradient)" transform="rotate(30 270 340)"/>
+            
+            <!-- Véu/Véus -->
+            <path d="M 145 180 Q 140 200 145 230 Q 150 250 160 260" stroke="#F5DEB3" stroke-width="8" fill="none" opacity="0.6"/>
+            <path d="M 255 180 Q 260 200 255 230 Q 250 250 240 260" stroke="#F5DEB3" stroke-width="8" fill="none" opacity="0.6"/>
+        </svg>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
